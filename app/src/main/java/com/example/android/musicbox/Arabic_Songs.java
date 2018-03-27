@@ -42,25 +42,29 @@ public class Arabic_Songs extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Songs play = arabicSongs.get(position);
 
-                mPlayer = MediaPlayer.create(Arabic_Songs.this, play.getmAudioFile());
+               if(currentPosition!= position){
+                   if (mPlayer != null){
+                       mPlayer.stop();
+                   }
 
+               }
+                if(mPlayer!=null){
+                    currentPosition = position ;
+                    mPlayer.stop();
+
+                }
+                mPlayer = MediaPlayer.create(Arabic_Songs.this,play.getmAudioFile());
                 mPlayer.start();
 
-                if (currentPosition != position){
-                    mPlayer.stop();
-                    mPlayer = MediaPlayer.create(Arabic_Songs.this, play.getmAudioFile());
-                    mPlayer.start();
-                }
+
 
             }
         });
     }
+
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         mPlayer.release();
     }
-
-
-
 }
