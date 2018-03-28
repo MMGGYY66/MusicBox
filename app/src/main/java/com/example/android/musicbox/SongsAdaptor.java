@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by AHMED HASSAN on 3/24/2018.
- */
+/*
+* SongsAdaptor is an  ArrayAdapter that can provide the layout for each list
+* based on a data source, which is a list of arabic and en songs objects.
+* */
 public class SongsAdaptor extends ArrayAdapter<Songs> {
 
     public SongsAdaptor(Activity context, ArrayList<Songs> arabicSongs) {
@@ -32,25 +33,25 @@ public class SongsAdaptor extends ArrayAdapter<Songs> {
                     R.layout.list_item, parent, false);
         }
 
-        // Get the {@link AndroidFlavor} object located at this position in the list
+        // Get the Songs object located at this position in the list
         Songs listenSongs = getItem(position);
 
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
+        // Find the TextView in the list_item.xml layout with the ID song name.
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.song_name);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
         nameTextView.setText(listenSongs.getSonName());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the TextView in the list_item.xml layout with the ID artist name.
         TextView numberTextView = (TextView) listItemView.findViewById(R.id.artist_name);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         numberTextView.setText(listenSongs.getArtistName());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        // Find the ImageView in the list_item.xml layout with the ID artist icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.artist_icon);
-        // Get the image resource ID from the current AndroidFlavor object and
+        // Get the image resource ID from the current Songs object and
         // set the image to iconView
         iconView.setImageResource(listenSongs.ImageArtist());
 

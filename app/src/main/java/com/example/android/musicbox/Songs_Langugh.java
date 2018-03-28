@@ -12,21 +12,21 @@ public class Songs_Langugh extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs__langugh);
-
-        Button arabicSongs = (Button)findViewById(R.id.arabic_songs);
+        // Set a click listener on that View
+        Button arabicSongs = (Button) findViewById(R.id.arabic_songs);
         arabicSongs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent arbSongs = new Intent(Songs_Langugh.this,Arabic_Songs.class);
+                Intent arbSongs = new Intent(Songs_Langugh.this, Arabic_Songs.class);
                 startActivity(arbSongs);
             }
         });
-
-        Button englishSongs = (Button)findViewById(R.id.english_songs);
+        // Set a click listener on that View
+        Button englishSongs = (Button) findViewById(R.id.english_songs);
         englishSongs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent engSongs = new Intent(Songs_Langugh.this,English_Songs.class);
+                Intent engSongs = new Intent(Songs_Langugh.this, English_Songs.class);
                 startActivity(engSongs);
             }
         });
