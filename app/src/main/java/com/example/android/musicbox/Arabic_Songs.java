@@ -72,7 +72,7 @@ public class Arabic_Songs extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         if (mPlayer != null) {
-            mPlayer.release();
+            mPlayer.stop();
         }
     }
 }

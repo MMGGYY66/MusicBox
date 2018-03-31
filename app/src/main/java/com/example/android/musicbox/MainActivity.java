@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Set a click listener on that View
         ImageButton welcome = (ImageButton) findViewById(R.id.letsstart);
         welcome.setOnClickListener(new View.OnClickListener() {

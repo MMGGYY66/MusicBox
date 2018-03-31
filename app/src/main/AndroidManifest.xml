@@ -18,14 +18,18 @@
         <activity
             android:name=".Arabic_Songs"
             android:label="@string/Arabic_Songs"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".English_Songs"
             android:label="@string/English_Songs"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Songs_Langugh"
-            android:label="@string/Songs_Langugh" />
+            android:label="@string/Songs_Langugh"
+            android:parentActivityName=".MainActivity"
+            />
     </application>
 
 </manifest>
